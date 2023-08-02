@@ -3,12 +3,13 @@
   "private": true,
   "version": "1.2.2",
   "description": "Starter project for Adobe Helix",
+  "type": "module",
   "scripts": {
     "lint:js": "eslint .",
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
     "lint": "npm run lint:js && npm run lint:css",
     "semantic-release": "semantic-release --debug",
-    "dev": "tsc --watch & hlx up"
+    "dev": "tsc --watch & node scss-watcher.js & hlx up"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/adobe/helix-project-boilerplate/issues"
   },
-  "type": "module",
   "homepage": "https://github.com/adobe/helix-project-boilerplate#readme",
   "devDependencies": {
     "@babel/core": "7.21.0",
@@ -35,6 +35,7 @@
     "eslint": "8.35.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.27.5",
+    "sass": "^1.64.2",
     "semantic-release": "21.0.5",
     "sinon": "15.0.1",
     "stylelint": "15.2.0",

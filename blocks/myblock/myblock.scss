@@ -1,0 +1,13 @@
+.myblock {
+  $myblock-background: mediumpurple;
+
+  background-color: $myblock-background;
+  border-radius: 2px;
+  border: 2px solid darken($myblock-background, 50%);
+
+  &::after {
+    color: white;
+    content: 'MyBlock';
+    padding: 10px;
+  }
+}
