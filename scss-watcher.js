@@ -1,6 +1,4 @@
 /* eslint-disable no-console */
-
-// eslint-disable-next-line import/no-extraneous-dependencies
 import * as sass from 'sass';
 import fs from 'fs';
 import path from 'path';

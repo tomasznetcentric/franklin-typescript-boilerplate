@@ -1,1 +1,0 @@
-{"version":3,"file":"myblock.js","sourceRoot":"","sources":["myblock.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,+BAA+B,CAAC;AAEhE,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAC,KAAK;IACpC,MAAM,GAAG,GAAG,eAAe,CAAC,KAAK,CAAC,CAAC;IAEnC,OAAO,CAAC,GAAG,CAAC,aAAa,EAAE,KAAK,EAAE,GAAG,CAAC,CAAC;AACzC,CAAC"}

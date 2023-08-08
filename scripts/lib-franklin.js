@@ -539,6 +539,31 @@ export function normalizeHeadings(el, allowedHeadings) {
 }
 
 /**
+ * Create an element with the given tag and classes.
+ * @param {string} tagName the html tag itself.
+ * @param {string[]|string} classes array of classes or one class as string to add.
+ * @param {object} props any other attributes to add to the element as object. Optional.
+ * @returns the element
+ */
+export function createElement(tagName, classes, props = {}) {
+  const element = document.createElement(tagName);
+  const propsObjectKeys = Object.keys(props);
+
+  if (classes) {
+    const classesArray = (typeof classes === 'string') ? [classes] : classes;
+    element.classList.add(...classesArray);
+  }
+
+  if (propsObjectKeys.length > 0) {
+    propsObjectKeys.forEach((propName) => {
+      element.setAttribute(propName, props[propName]);
+    });
+  }
+
+  return element;
+}
+
+/**
  * Set template (page structure) and theme (page styles).
  */
 export function decorateTemplateAndTheme() {
@@ -652,6 +677,7 @@ export function setup() {
  * Auto initializiation.
  */
 function init() {
+  console.log('lib-franklin.js:init()'); // todo: remove before merge!
   setup();
   sampleRUM('top');
 

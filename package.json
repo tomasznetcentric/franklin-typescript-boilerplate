@@ -5,11 +5,10 @@
   "description": "Starter project for Adobe Helix",
   "type": "module",
   "scripts": {
-    "lint:js": "eslint .",
-    "lint:css": "stylelint blocks/**/*.css styles/*.css",
-    "lint": "npm run lint:js && npm run lint:css",
-    "semantic-release": "semantic-release --debug",
-    "dev": "tsc --watch & node scss-watcher.js & hlx up"
+    "dev": "tsc --watch & node scss-watcher.js & hlx up",
+    "lint:ts": "eslint . && tsc --pretty",
+    "lint:scss": "stylelint blocks/**/*.scss styles/*.scss",
+    "semantic-release": "semantic-release --debug"
   },
   "repository": {
     "type": "git",
@@ -28,18 +27,22 @@
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/exec": "6.0.3",
     "@semantic-release/git": "10.0.1",
-    "@types/node": "^20.4.5",
+    "@types/node": "20.4.5",
+    "@typescript-eslint/eslint-plugin": "6.3.0",
+    "@typescript-eslint/parser": "6.3.0",
     "@web/test-runner": "0.15.1",
     "@web/test-runner-commands": "0.6.5",
     "chai": "4.3.7",
     "eslint": "8.35.0",
     "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "9.0.0",
     "eslint-plugin-import": "2.27.5",
-    "sass": "^1.64.2",
+    "sass": "1.64.2",
     "semantic-release": "21.0.5",
     "sinon": "15.0.1",
     "stylelint": "15.2.0",
     "stylelint-config-standard": "30.0.1",
-    "typescript": "^5.1.6"
+    "stylelint-config-standard-scss": "^10.0.0",
+    "typescript": "5.1.6"
   }
 }

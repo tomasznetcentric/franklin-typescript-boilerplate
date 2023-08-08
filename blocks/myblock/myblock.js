@@ -3,4 +3,3 @@ export default function decorate(block) {
     const cfg = readBlockConfig(block);
     console.log('myblock is:', block, cfg);
 }
-//# sourceMappingURL=myblock.js.map
