@@ -223,6 +223,13 @@ export async function decorateIcons(element) {
 }
 
 /**
+ * @returns language path portion for the current URL to be used to build language specific URLs
+ */
+export function getLanguagePath() {
+  return window.location.pathname === '/de' || window.location.pathname.startsWith('/de/') ? '/de' : '';
+}
+
+/**
  * Gets placeholders object.
  * @param {string} [prefix] Location of placeholders
  * @returns {object} Window placeholders object
@@ -230,9 +237,10 @@ export async function decorateIcons(element) {
 export async function fetchPlaceholders(prefix = 'default') {
   window.placeholders = window.placeholders || {};
   const loaded = window.placeholders[`${prefix}-loaded`];
+  const languagePath = getLanguagePath();
   if (!loaded) {
     window.placeholders[`${prefix}-loaded`] = new Promise((resolve, reject) => {
-      fetch(`${prefix === 'default' ? '' : prefix}/placeholders.json`)
+      fetch(`${prefix === 'default' ? '' : prefix}${languagePath}/placeholders.json`)
         .then((resp) => {
           if (resp.ok) {
             return resp.json();

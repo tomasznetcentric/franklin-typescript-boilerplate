@@ -1,9 +1,11 @@
+@use "sass:color";
+
 .myblock {
   $myblock-background: mediumpurple;
 
   background-color: $myblock-background;
   border-radius: 2px;
-  border: 2px solid darken($myblock-background, 50%);
+  border: 2px solid color.adjust($myblock-background, -50%);
 
   &::after {
     color: white;

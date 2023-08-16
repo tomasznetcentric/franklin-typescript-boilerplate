@@ -1,6 +1,14 @@
+@import '../../styles/common-dependencies';
+
 .columns > div {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
+
+  @include breakpoint($bp-desktop) {
+    align-items: center;
+    flex-direction: unset;
+    gap: 32px;
+  }
 }
 
 .columns img {
@@ -9,6 +17,11 @@
 
 .columns > div > div {
   order: 1;
+
+  @include breakpoint($bp-desktop) {
+    flex: 1;
+    order: unset;
+  }
 }
 
 .columns > div > .columns-img-col {
@@ -17,17 +30,4 @@
 
 .columns > div > .columns-img-col img {
   display: block;
-}
-
-@media (min-width: 900px) {
-  .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 32px;
-  }
-
-  .columns > div > div {
-    flex: 1;
-    order: unset;
-  }
 }

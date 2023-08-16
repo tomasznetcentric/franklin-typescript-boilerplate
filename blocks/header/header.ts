@@ -138,5 +138,8 @@ export default async function decorate(block) {
     const navWrapper = createElement('div', 'nav-wrapper');
     navWrapper.append(nav);
     block.append(navWrapper);
+    const search = block.querySelector('.icon-search');
+    search.setAttribute('title', `${window.placeholders?.default?.searchTitle}`);
+    console.log('search', search); // todo: remove before merge!
   }
 }
